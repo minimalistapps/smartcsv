@@ -1,4 +1,4 @@
-# Home
+# Generate chart
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
