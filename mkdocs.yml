@@ -1,0 +1,8 @@
+site_name: Smart CSV Docs
+theme:
+  name: material
+  palette: 
+    scheme: default
+    primary: teal
+    accent: teal
+  
