@@ -4,10 +4,10 @@ Welcome to the Smart CSV documentation! We strive to make this documentation as 
 
 The documentation is divided into the following sections:
 
-- [Basics](/basics)
-- [Filter](/filter)
-- [SQL query](/sql-query)
-- [Export pdf](/export-pdf)
-- [Generate chart](/generate-chart)
-- [Customization](/customization)
-- [FAQ](/faq)
+- [Basics](./basics)
+- [Filter](./filter)
+- [SQL query](./sql-query)
+- [Export pdf](./export-pdf)
+- [Generate chart](./generate-chart)
+- [Customization](./customization)
+- [FAQ](./faq)
