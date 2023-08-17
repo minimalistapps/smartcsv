@@ -1,4 +1,5 @@
 site_name: Smart CSV Docs
+site_url: https://minimalistapps.github.io/smartcsv
 theme:
   name: material
   palette:
