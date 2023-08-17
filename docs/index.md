@@ -1,17 +1,13 @@
-# Home
+# Smart CSV Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to the Smart CSV documentation! We strive to make this documentation as clear, accurate, and thorough as possible. If you find any errors or have any questions, please contact us [here](mailto:imuosdev@gmail.com).
 
-## Commands
+The documentation is divided into the following sections:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [Basics](/basics)
+- [Filter](/filter)
+- [SQL query](/sql-query)
+- [Export pdf](/export-pdf)
+- [Generate chart](/generate-chart)
+- [Customization](/customization)
+- [FAQ](/faq)

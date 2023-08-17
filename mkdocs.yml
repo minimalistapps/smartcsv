@@ -11,24 +11,36 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.tracking
-    - navigation.indexes
+    - navigation.tracking  
     - navigation.top
-extra:
-  copyright: Copyright &copy; 2023 Minimalist Apps
+    - navigation.footer
+    - toc.integrate
+    - toc.follow
+    - content.code.annotate
+
+copyright: Copyright &copy; 2023 Minimalist Apps
+
+extra_css:
+  - stylesheets/extra.css
+  
+markdown_extensions:
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      
 nav:
   - Home: index.md
-  - Basics:
-      - basics/index.md
-  - Filter:
-      - filter/index.md
-  - Sql query:
-      - sql-query/index.md
-  - Export pdf:
-      - export-pdf/index.md
-  - Generate chart:
-      - generate-chart/index.md
-  - Customization:
-      - customization/index.md
-  - FAQ:
-      - faq/index.md
+  - Basics: basics.md      
+  - Filter: filter.md
+  - Sql query: sql-query.md
+  - Export pdf: export-pdf.md
+  - Generate chart: generate-chart.md
+  - Customization: customization.md
+  - FAQ: faq.md
