@@ -23,6 +23,9 @@ Smart CSV support following compare operators:
 - `is empty`
 - `is not empty`
 
+=== "Visual filter editor"
+    ![Visual filter editor](assets/images/smartcsv-visual-filter.gif){ width="300" loading=lazy }
+
 At the bottom of filter screen, you can also see the `History` button.
 By click on the `History` button, you will see the history `Filter` then you can
 reuse them.

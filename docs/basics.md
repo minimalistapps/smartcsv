@@ -8,11 +8,15 @@ There are 2 ways to open a csv file:
 
 ### Open from Smart CSV app
 - Click on the `+` button.
-- On the first time, the app will ask permission to open file. So please choose `Allow` to let app access the file.
+- `Before Android 13` On the first time, the app will ask permission to open file. So please choose `Allow` to let app access the file.
 - After you given the permission, the file picker will be shown, and choose the csv file that you want to open.
 - The csv file will be imported to the app, and then the csv viewer will display the csv content.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nINwOjDN4Ms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+=== "Before Android 13"
+    ![Open csv file before android 13](assets/images/smartcsv-open-file-with-permission.gif){ width="300" loading=lazy }
+
+=== "Android 13 or Higher"
+    ![Open csv file for android 13 or higher](assets/images/smartcsv-open-file.gif){ width="300" loading=lazy }
 
 ### Open from File explorer
 - Open your favorite file explorer application (eg. `Files`).
@@ -20,7 +24,8 @@ There are 2 ways to open a csv file:
 - The dialog `open with` will be shown.
 - Scroll & select `Smart CSV` to use to view the csv file.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nINwOjDN4Ms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+=== "Open csv file from File Manager"
+    ![Open csv file from File Manager](assets/images/smartcsv-open-file-from-explorer.gif){ width="300" loading=lazy }
 
 !!! note
     All file, after open will be listed in the `Recent files`.
@@ -37,6 +42,9 @@ After the search box open, you can type the text you want to find.
 Smart CSV will auto navigate and highlight the row that contain the searched text.
 You can also using arrow buttons to move next/previous row match with the search text.
 
+=== "Search content"
+    ![Search content](assets/images/smartcsv-search.gif){ width="300" loading=lazy }
+
 ---
 
 ## Column resize
@@ -48,6 +56,9 @@ To do that, you have two options:
 
 You can long press on the header, then the resize indicator will be shown. Now you can drag to resize the column width.
 
+=== "Manual resize"
+    ![Manual resize](assets/images/smartcsv-manual-resize.gif){ width="300" loading=lazy }
+
 ### Change all column width to the same value.
 Click on the resize column button :left_right_arrow:
 After the resize dialog show, input the column width that you want to set to all columns (eg: 75)
@@ -56,6 +67,9 @@ Finally, click on the button `Custom`. Now all the columns will have the same wi
 
 To restore the automatically resize, you can click on the resize column button :left_right_arrow:
 Then click to button `Auto`, then all columns will be set site automatically as default.
+
+=== "Auto resize"
+    ![Auto resize](assets/images/smartcsv-resize-auto.gif){ width="300" loading=lazy }
 
 ---
 
@@ -66,6 +80,9 @@ You just need to click on the jump button, then type the row number, and finally
 that row number.
 
 In that dialog, you can also click on the `Begin` to jump to the first row, or click on the `End` to jump to the last row.
+
+=== "Jump to"
+    ![Jump to](assets/images/smartcsv-jump.gif){ width="300" loading=lazy }
 
 ---
 
@@ -84,6 +101,9 @@ Now the row number from 500 - 1000 will be selected.
 
 Then, you can use feature export pdf, generate chart or copy with the selected rows.
 
+=== "Select range"
+    ![Jump to](assets/images/smartcsv-select-range.gif){ width="300" loading=lazy }
+
 ---
 
 ## Copy
@@ -97,17 +117,18 @@ In the dialog, you can select which columns will be copy. You can see the result
 Finally, click on the `Copy` button. The selected content will be copy to the clipboard.
 Now, you can paste that content anywhere as you want.
 
-### VIDEO
+=== "Copy"
+    ![Copy](assets/images/smartcsv-copy.gif){ width="300" loading=lazy }
 
 Sometimes, you just want to copy the content of a single cell.
 To do that, you just need long press on that cell, the cell detail dialog will be shown.
 There is a copy button on the top right of the dialog.
 Click to that icon to copy the content.
 
-### VIDEO
-
-
 ## Share, rename, remove files.
 In the home screen, in `Recent files` you can click on the three dots button.
 Then, you can choose either share/rename/remove that file.
+
+=== "Share, rename, remove file"
+    ![Copy](assets/images/smartcsv-share-rename.gif){ width="300" loading=lazy }
 

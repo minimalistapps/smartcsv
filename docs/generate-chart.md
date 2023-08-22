@@ -8,6 +8,12 @@ Following steps to convert CSV content to the pdf:
 - [Custom chart types](#custom-chart-type), [labels](#custom-labels) & [series](#custom-series) to match your request.
 - Finally, click on the :octicons-download-16: button to save the chart.
 
+=== "Generate chart"
+    ![Generate chart](assets/images/smartcsv-generate-chart.gif){ width="300" loading=lazy }
+
+!!! warning
+    You can only generate chart if the data contains at least on serier (a column that contains number value).
+
 !!! note
     You can view your chart file in the :material-folder-download: (exported) tab in the Home screen.
 

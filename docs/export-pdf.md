@@ -8,6 +8,8 @@ Following steps to convert CSV content to the pdf:
 - [Custom columns](#custom-columns) & [style](#custom-styles) to match your request.
 - Finally, click on the :octicons-download-16: button to start convert & save the PDF file.
 
+=== "Export PDF"
+    ![Export PDF](assets/images/smartcsv-export-pdf.gif){ width="300" loading=lazy }
 
 !!! note
     When there is no rows is selected, then all rows will be consider to export to the PDF

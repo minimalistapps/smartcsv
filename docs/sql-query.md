@@ -44,4 +44,8 @@ WHERE A >= 2021 -- (2)
 1.  :man_raising_hand: `CSV` is the table name.
 2.  :man_raising_hand: `A` is the column name that mapped with `Year.`
 
+
+=== "SQL query"
+    ![SQL query](assets/images/smartcsv-sql-query.gif){ width="300" loading=lazy }
+
 There is also a `History` button at the bottom of `SQL Query` screen, which allow you to access all history sql query.
