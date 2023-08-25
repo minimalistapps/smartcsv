@@ -7,6 +7,7 @@ The documentation is divided into the following sections:
 - [Basics](./basics)
 - [Filter](./filter)
 - [SQL query](./sql-query)
+- [Show/hide, freeze columns](./show-hide-freeze)
 - [Export pdf](./export-pdf)
 - [Generate chart](./generate-chart)
 - [Customization](./customization)

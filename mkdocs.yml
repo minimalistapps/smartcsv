@@ -57,6 +57,7 @@ nav:
   - Basics: basics.md      
   - Filter: filter.md
   - Sql query: sql-query.md
+  - Show/hide, freeze columns: show-hide-freeze.md
   - Export pdf: export-pdf.md
   - Generate chart: generate-chart.md
   - Customization: customization.md
