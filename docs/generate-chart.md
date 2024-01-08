@@ -1,9 +1,9 @@
 # Generate chart
 
-Smart CSV let you convert the CSV content to the beautiful PDF file.
-Following steps to convert CSV content to the pdf:
+Smart CSV empowers you to generate charts directly from your CSV content.
+Follow these steps to create a chart:
 
-- Select specific rows or all to convert to the PDF.
+- Select specific rows or all for chart data.
 - Click on the :fontawesome-solid-chart-simple: button (on the top of screen).
 - [Custom chart types](#custom-chart-type), [labels](#custom-labels) & [series](#custom-series) to match your request.
 - Finally, click on the :octicons-download-16: button to save the chart.
