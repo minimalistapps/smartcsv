@@ -1,4 +1,4 @@
-# Align columns
+# Align columns :material-professional-hexagon:{ .pro title="Available for PRO version only" }
 
 By default, SmartCSV aligns number columns to the right and text columns to the left. However, there are instances when you may need to customize the alignment for each column.
 

@@ -1,4 +1,4 @@
-# Show column image url as an image
+# Show column image url as an image :material-professional-hexagon:{ .pro title="Available for PRO version only" }
 
 Transforming your CSV data, especially when it includes image URLs, into a visually appealing display has never been easier. With SmartCSV, effortlessly convert those image URLs into actual images with just a few clicks. Let us simplify the process for you.
 
