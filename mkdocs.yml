@@ -58,6 +58,8 @@ nav:
   - Filter: filter.md
   - Sql query: sql-query.md
   - Show/hide, freeze columns: show-hide-freeze.md
+  - Show as column image: column-to-image.md
+  - Align content: align-column.md
   - Export pdf: export-pdf.md
   - Generate chart: generate-chart.md
   - Customization: customization.md

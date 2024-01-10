@@ -8,6 +8,8 @@ The documentation is divided into the following sections:
 - [Filter](./filter)
 - [SQL query](./sql-query)
 - [Show/hide, freeze columns](./show-hide-freeze)
+- [Show as column image](./column-to-image)
+- [Align content](./align-column)
 - [Export pdf](./export-pdf)
 - [Generate chart](./generate-chart)
 - [Customization](./customization)
