@@ -57,6 +57,7 @@ nav:
   - Basics: basics.md      
   - Filter: filter.md
   - Sql query: sql-query.md
+  - AI assistant: ai-assistant.md
   - Show/hide, freeze columns: show-hide-freeze.md
   - Show as column image: column-to-image.md
   - Align content: align-column.md
