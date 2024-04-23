@@ -31,7 +31,7 @@ theme:
       danger: octicons/zap-16
       bug: octicons/bug-16
       example: octicons/beaker-16
-      quote: octicons/quote-16
+      quote: material/format-quote-open
 
 copyright: Copyright &copy; 2023 Minimalist Apps
 
@@ -53,7 +53,7 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
       
 nav:
-  - Home: index.md
+  - Smart CSV: index.md
   - Basics: basics.md      
   - Filter: filter.md
   - Sql query: sql-query.md
