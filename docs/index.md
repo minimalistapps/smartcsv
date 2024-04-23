@@ -5,10 +5,10 @@ hide:
 Discover Smart CSV, your go-to app for effortlessly managing CSV files. With advanced features like intuitive search, visual filters, SQL querying, PDF conversion, and more, it revolutionizes data interaction. Experience efficiency like never before.
 
 <a href="https://play.google.com/store/apps/details?id=xyz.minimalistapps.smartcsv" target="_blank">
-    <img src="assets/download_google.svg" width="223"/>
+    <img src="assets/download_google.svg" width="223" alt="Get it on Google Play"/>
 </a>
 <a href="https://apps.apple.com/us/app/smart-csv-viewer-smart-tables/id1611962123" target="_blank">
-    <img src="assets/download_apple.svg" width="189"/>
+    <img src="assets/download_apple.svg" width="189" alt="Download on the App Store"/>
 </a>
 
 
