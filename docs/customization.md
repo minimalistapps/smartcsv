@@ -12,8 +12,8 @@ Under `Dark mode`, pick:
 - `Light` &mdash; always light.
 - `Dark` &mdash; always dark.
 
-=== "Dark mode"
-    ![Dark mode](assets/images/smartcsv-dark-mode.png){ width="300" loading=lazy }
+=== "Settings"
+    ![The settings screen](assets/images/smartcsv-settings.png){ width="300" loading=lazy }
 
 ## Language
 

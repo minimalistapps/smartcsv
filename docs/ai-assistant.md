@@ -21,6 +21,9 @@ The answer comes back as a card, before it touches your data:
 - a preview of the first few matching rows, laid out as the grid will show them
 - `Show SQL`, if you want to see the query it wrote (and `Open in SQL editor` to change it by hand)
 
+=== "An answer card"
+    ![The assistant sheet with an answer card](assets/images/smartcsv-ai-assistant.png){ width="300" loading=lazy }
+
 Tap `Apply` to filter the grid with it &mdash; if a filter was already on, this replaces it, and `Undo` puts the previous one back for a few seconds. `Edit question` lets you refine your question instead.
 
 ## Privacy

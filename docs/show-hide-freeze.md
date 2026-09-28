@@ -2,6 +2,12 @@
 
 Column settings live in the **Layout panel**, opened by tapping a column's header, then the **Layout** slot in the bottom bar. The panel sits over the grid so you can see the effect immediately &mdash; tapping a different header retargets it without closing it.
 
+=== "The Layout panel, for one column"
+    ![The Layout panel for a selected column](assets/images/smartcsv-layout-panel-column.png){ width="300" loading=lazy }
+
+=== "The Layout panel, for the whole grid"
+    ![The Layout panel with nothing selected](assets/images/smartcsv-layout-panel-grid.png){ width="300" loading=lazy }
+
 ## Show, hide columns.
 
 - Tap the header of the column you want to hide, then tap **Layout**.
