@@ -1,17 +1,20 @@
 # Customization
 
-Smart CSV support multiple themes & dark mode.
+Smart CSV supports dark mode and 47+ languages.
 
-To change it, in the `Home` screen, click on the button :fontawesome-solid-gear:
+To change these, go to the `Home` screen and tap the :fontawesome-solid-gear: button.
 
-## Custom dark/ligh mode
+## Dark / light mode
 
-In the menu item `Dark mode` you can custom dark mode setting.
+Under `Dark mode`, pick:
 
-- `system` - automatically dark/light to matching with system setting.
-- `dark` - display app in dark mode.
-- `light` - display app in light mode.
+- `System` &mdash; matches your device's setting.
+- `Light` &mdash; always light.
+- `Dark` &mdash; always dark.
 
+=== "Dark mode"
+    ![Dark mode](assets/images/smartcsv-dark-mode.png){ width="300" loading=lazy }
 
-## Custom theme
-There are 6 color themes included. You can change theme by click on the circle color button in `Theme`.
+## Language
+
+The settings screen also has a `Language` picker, right above `Dark mode`.
