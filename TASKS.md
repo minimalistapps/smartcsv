@@ -80,30 +80,40 @@ noted.
       the repo's pre-existing (unrelated) emoji-extension deprecation
       warnings that make `--strict` fail regardless of this work.
 
-## Follow-up (not done this session)
+## Done in the follow-up session (2026-09-28)
 
-- **Layout panel golden.** `show-hide-freeze.md`, `align-column.md`, and
-  `column-to-image.md` have accurate text but no screenshot.
-  `LayoutPanel` needs `contentProvider` (real document content),
-  `gridSelectionProvider` and several column-mutation view models — real
-  provider wiring against a loaded document, not a hand-composable widget
-  like `FilterTree`. Worth doing once, since it covers three pages at once.
-- **AI assistant sheet golden.** `bot_dialog.dart` pulls in network
-  (`dio`), IAP (`purchases_flutter`) and the CSV storage view model — too
-  much to wire safely in one sitting. `ai-assistant.md` is text-only.
-- **`home_settings_*` skip.** Root cause is `language_config.dart`'s
-  `GoogleFonts.openSans()` call per dropdown item; `customization.md`'s
-  screenshot sidesteps it, but the underlying golden gap (and whatever
-  makes the fetch happen despite `allowRuntimeFetching = false`) is still
-  open.
-- **Old GIFs still on disk** under `docs/assets/images/` for pages this
-  session didn't touch visually (or that no longer have any image), e.g.
-  `smartcsv-export-pdf.gif`, `smartcsv-generate-chart.gif` (kept as a
-  fallback illustration where the flow itself didn't change), and the now
-  fully unreferenced `smartcsv-copy.gif`, `smartcsv-jump.gif`,
-  `smartcsv-select-range.gif`, `smartcsv-share-rename.gif`,
-  `smartcsv-show-hide-columns.gif`, `smartcsv-column-to-image.gif`,
-  `smartcsv-align-column.gif`, `smartcsv-manual-resize.gif`,
-  `smartcsv-resize-auto.gif`, `smartcsv-visual-filter.gif`,
-  `smartcsv-sql-query.gif`, `smartcsv-ai-assistant.gif`. Safe to delete
-  once someone's confirmed nothing external links to them directly.
+- [x] (app) Layout panel goldens, both scopes (`layout_panel_test.dart`) —
+      the real `LayoutPanel` with its providers overridden; its 42% height
+      cap is measured against a taller screen so Rename/Hide show. Cropped
+      copies are in `show-hide-freeze.md`, `align-column.md`,
+      `column-to-image.md`, `column-types.md`.
+- [x] (app) Assistant answer-card golden (`bot_sheet_answer_test.dart`) —
+      reached through a *Recent* question, which needs only local storage
+      (faked), not RevenueCat or the SQL server. In `ai-assistant.md`.
+- [x] (app) `home_settings_*` unskipped. Root cause: with
+      `allowRuntimeFetching = false`, `GoogleFonts.openSans()` throws
+      because Open Sans isn't bundled (it was never a network fetch in
+      tests). The language dropdown now falls back to the bundled Noto
+      Thai/Tamil faces. The full settings screenshot replaces the
+      dark-mode-row crop in `customization.md`.
+- [x] (docs) New pages: `editing.md` (cells, Edit menu, rows, columns,
+      writing to file), `column-types.md`, `import-options.md`
+      (confirmation card, options sheet, headerless files).
+- [x] (docs) `basics.md` fixes: resizing is the grip at a header's right
+      edge (long press sorts); Copy is disabled with nothing selected.
+- [x] (docs) Dropped stale PRO badges from `align-column.md` and
+      `column-to-image.md` — no Pro gate on the Layout panel or on types.
+- [x] (docs) Site theme moved to the app's "SmartCsv Paper" tokens
+      (`extra.css`): warm ground, green accent, Inter + JetBrains Mono,
+      light/dark/system toggle. Nav grouped into five tabs (15 flat tabs
+      overflowed). Emoji extension moved to `material.extensions.emoji`,
+      so `mkdocs build --strict` now passes.
+- [x] (docs) Deleted the 20 unreferenced images (old GIFs plus two
+      superseded PNGs). They remain in git history.
+
+## Still open
+
+- `export-pdf.md` and `generate-chart.md` have only a static screenshot
+  now that their GIFs are gone; the PDF export screen has no doc golden.
+- `export-pdf.md`'s *Custom columns* / *Custom styles* text predates the
+  redesign and wasn't re-audited against `pdf_export_*`.
