@@ -1,29 +1,20 @@
 # Show, hide, freeze column.
 
+Column settings live in the **Layout panel**, opened by tapping a column's header, then the **Layout** slot in the bottom bar. The panel sits over the grid so you can see the effect immediately &mdash; tapping a different header retargets it without closing it.
+
 ## Show, hide columns.
-There are instances where you might find yourself dealing with a large number of columns in a display, and you might want to hide specific ones for a cleaner view. Here's how you can do that:
 
-- Look for and click on the icon that consists of `three dots`. You'll usually find this in the upper right corner of the screen.
+- Tap the header of the column you want to hide, then tap **Layout**.
+- In the panel, tap **Hide**.
+- The column disappears from the grid and, once nothing is selected, shows up as a chip under **Hidden columns** in the panel's grid view.
 
-- From the options that appear, select `Show/hide columns.`
-
-- A dialog box will open. In this box, you'll see a list of columns with checkboxes next to them. To hide a column, simply uncheck the box next to its name.
-
-- Once you've unchecked the columns you want to hide, finalize your choices by clicking the `Set` button.
-
-=== "Show/hide columns"
-    ![Show/hide columns](assets/images/smartcsv-show-hide-columns.gif){ width="300" loading=lazy }
+To bring a hidden column back, tap its chip under **Hidden columns** (or tap **Show all** when there's more than one).
 
 ## Freeze column.
-To ensure certain columns remain visible even during horizontal scrolling, follow these steps:
 
-- Locate and click on the `Three-dot` icon situated in the upper-right corner of the screen.
+To keep certain leading columns visible while you scroll horizontally:
 
-- Opt for the `Freeze column` feature from the menu that appears.
+- With nothing (or a row) selected, open **Layout**.
+- Use the **Frozen columns** stepper to set how many columns, counted from the left, stay in place.
 
-- A dialog box will open, presenting you with the columns available for freezing. Here, choose the specific column you wish to keep in view.
-
-- Solidify your choice by clicking the `Select` button.
-
-=== "Freeze column"
-    ![Freeze column](assets/images/smartcsv-freeze-column.gif){ width="300" loading=lazy }
+Alternatively, select a column band and toggle **Freeze through this column** &mdash; the frozen count becomes that band's last column, plus one.

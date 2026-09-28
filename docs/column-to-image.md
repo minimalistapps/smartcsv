@@ -1,19 +1,13 @@
 # Show column image url as an image :material-professional-hexagon:{ .pro title="Available for PRO version only" }
 
-Transforming your CSV data, especially when it includes image URLs, into a visually appealing display has never been easier. With SmartCSV, effortlessly convert those image URLs into actual images with just a few clicks. Let us simplify the process for you.
+Transforming your CSV data, especially when it includes image URLs, into a visually appealing display has never been easier. Smart CSV can show a column of image URLs as actual images, by setting that column's **type** to **Image**.
 
 Here's how you can do that:
 
-- Look for and click on the icon that consists of `three dots`. You'll usually find this in the upper right corner of the screen.
-
-- From the options that appear, select `Column to image`
-
-- Upon opening the dialog box, a list of columns will be presented. Simply activate the column containing the image URL to seamlessly showcase it as an image. It's as straightforward as that.
-
-- Once you've made your selection, just click the 'Apply' button to witness the transformation take effect.
-
-=== "Show as column image"
-    ![Show as column image](assets/images/smartcsv-column-to-image.gif){ width="300" loading=lazy }
+- Tap the column's header to select it.
+- Tap **Layout** in the bottom bar, then **Type**.
+- In the type sheet, pick **Image**. Smart CSV shows how many of the column's values fit that type before you apply it.
+- Tap **Apply**. Every cell in the column now shows a thumbnail of the image at that URL, and you can type or paste a new address directly into a cell.
 
 !!! note
-    Within the column selection dialog, you have the option to streamline the process further. By clicking the 'Auto' button, SmartCSV will intelligently identify columns containing URLs and automatically designate them as image columns. Simplify your workflow with this convenient feature.
+    This is one of several column types Smart CSV supports (`Text`, `Number`, `Checkbox`, `Select`, `Date`, `Link`, `Image`) &mdash; see the column's header for the full type sheet, reached from **Layout → Type** or from **Manage columns**. Choosing a type never changes the text stored in your file; it only changes how the column looks, sorts and filters.
