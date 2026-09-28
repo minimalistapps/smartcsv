@@ -2,17 +2,36 @@ site_name: Smart CSV Docs
 site_url: https://minimalistapps.github.io/smartcsv
 theme:
   name: material
+  # Colours come from the app's design tokens, in stylesheets/extra.css.
   palette:
-    scheme: default
-    primary: teal
-    accent: teal
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+  font:
+    text: Inter
+    code: JetBrains Mono
   logo: assets/logo.svg
   favicon: assets/favicon.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.tracking  
+    - navigation.tracking
     - navigation.top
     - navigation.footer
     - toc.integrate
@@ -33,7 +52,7 @@ theme:
       example: octicons/beaker-16
       quote: material/format-quote-open
 
-copyright: Copyright &copy; 2023 Minimalist Apps
+copyright: Copyright &copy; 2023&ndash;2026 Minimalist Apps
 
 extra_css:
   - stylesheets/extra.css
@@ -49,19 +68,27 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
       
 nav:
   - Smart CSV: index.md
-  - Basics: basics.md      
-  - Filter: filter.md
-  - Sql query: sql-query.md
-  - AI assistant: ai-assistant.md
-  - Show/hide, freeze columns: show-hide-freeze.md
-  - Show as column image: column-to-image.md
-  - Align content: align-column.md
-  - Export pdf: export-pdf.md
-  - Generate chart: generate-chart.md
-  - Customization: customization.md
-  - FAQ: faq.md
+  - Getting started:
+      - Basics: basics.md
+      - Import options: import-options.md
+      - Editing: editing.md
+  - Find data:
+      - Filter: filter.md
+      - Sql query: sql-query.md
+      - AI assistant: ai-assistant.md
+  - Columns:
+      - Show/hide, freeze columns: show-hide-freeze.md
+      - Align content: align-column.md
+      - Column types: column-types.md
+      - Show as column image: column-to-image.md
+  - Export:
+      - Export pdf: export-pdf.md
+      - Generate chart: generate-chart.md
+  - Settings & FAQ:
+      - Customization: customization.md
+      - FAQ: faq.md
