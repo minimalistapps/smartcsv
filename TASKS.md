@@ -1,112 +1,115 @@
 # Docs refresh — TASKS
 
-Goal: `docs/*.md` (this repo) describe an old UI. The app at
-`/Users/uos/Projects/SmartCsv/smartcsv` has since had a full design rework
-(`DESIGN.md`, `presentation/design/*`) — new app bars, filter/SQL panel,
-viewer dock, tutorial, home shell, chart editor, PDF export style editor, etc.
-The docs' screenshots are old animated GIFs of the previous UI; replace them
-with static PNGs captured from `flutter test --update-goldens` against the
-current app, and fix any text that describes the old UI/flow.
+## What changed since this was first written
 
-Two repos involved:
-- **App repo** (`smartcsv`): add/extend `test/design/*_test.dart` golden
-  tests, regenerate `test/design/goldens/*.png`. Commit there per task.
-- **Docs repo** (this one, `Docs/smartcsv`): copy the relevant PNGs into
-  `docs/assets/images/`, update the markdown to reference them and correct
-  any stale text. Commit here per task.
+Reading the app's own `docs/*.md` (dev specs, at
+`/Users/uos/Projects/SmartCsv/smartcsv/docs/`) turned up more than a visual
+refresh: the interaction model changed.
 
-Existing golden coverage already in the app repo (reusable as-is):
-- `home_recent_{light,dark}.png`, `home_recent_scrolled_*.png` — home
-  screen / recent files list.
-- `viewer_app_bar.png`, `viewer_app_bar_inset.png` — viewer top bar.
-- `viewer_search_bar.png`, `viewer_search_bar_dark_1_5x.png` — search bar.
-- `viewer_dock.png` — bottom selection dock (select/copy/etc. row).
-- `viewer_how_to_use.png` — in-app help panel.
-- `viewer_status_title.png` — row-count/status title.
-- `tutorial_welcome_*.png`, `tutorial_intro_view_*.png`,
-  `tutorial_intro_export_*.png` — onboarding screens.
-- `chart_action_bar_*.png`, `chart_glyphs_*.png`, `editor_work_bar.png`,
-  `editor_column_rows.png` — generate-chart screen chrome.
+- The **five column dialogs** the public docs describe (resize, freeze,
+  align, column-to-image, show/hide columns —
+  `column_resize_dialog.dart`, `freeze_column_dialog.dart`,
+  `column_align_dialog.dart`, `column_to_image_dialog.dart`,
+  `csv_columns_selection_dialog.dart`) belong to the **old grid**, which is
+  dying (`viewer-layout-panel.md`). The current grid replaces all five with
+  one **Layout panel**: tap a column header, then Width / Align / Sort /
+  Freeze / Type / Hide live in a panel over the grid.
+- **Show as image** is gone as a standalone action; it is now a column
+  **Type** (`column-types.md`) alongside Text/Number/Checkbox/Select/
+  Date/Link/Image — an entirely undocumented feature.
+- **Filter** is a panel over the grid with **Filter** and **Sort** tabs
+  (`filter-sheet.md`, `sorting.md`), not a full-screen editor. SQL lives
+  inside it as **Edit as SQL**, not a separate screen/tab.
+- **Copy** is one tap in the bottom dock (no column-picker dialog). Cut,
+  Clear content, and per-cell **Filter by this value** are on a long-press
+  menu (`cell-content.md`).
+- **Jump to row** and **select a range** still exist as dialogs, but moved
+  from bottom-bar buttons into the viewer's `⋮` menu
+  (`csv_viewer_more_actions.dart`).
+- **Sort**, **Undo/redo**, and the **selection summary** (count/sum/avg
+  over a selection) are real, current features with no page in the public
+  docs at all.
+- The **AI assistant** is a sheet reached from the dock, not a separate
+  screen (`assistant-sheet.md`).
 
-Known blocker: `home_settings_{light,dark}.png` golden exists in
-`home_shell_test.dart` but is `skip: true` (language dropdown does a live
-`google_fonts` network fetch inside the test sandbox — see comment at
-`test/design/home_shell_test.dart:273`). Needed for `customization.md`;
-either fix the fallback-font fetch or capture the theme picker without
-opening the language dropdown.
+None of this is in the current `docs/*.md` (this repo). The plan below
+updates the wording to match, and replaces the old GIFs with static PNGs
+from `flutter test --update-goldens` where a golden is feasible in this
+session; where writing a new golden is high-risk/low-context (a screen
+needs a live view model, a loaded file, or unfamiliar provider wiring), the
+task says so and text-only gets fixed instead, logged as follow-up.
 
-No golden coverage yet (net-new `test/design/*_test.dart` files needed):
-filter visual editor, SQL query page capture, AI assistant chat, manual
-column resize + resize-all dialog, jump-to dialog, select-range dialog, copy
-dialog, share/rename/remove menu, show/hide columns dialog, freeze column
-dialog, column-to-image dialog, align-columns dialog, PDF export
-columns/style dialogs (chrome exists in `export_filter_chrome_test.dart` but
-it takes no goldens today — needs `matchesGoldenFile` calls added).
+Two repos:
+- **App repo** (`smartcsv`): add/extend `test/design/*_test.dart`,
+  regenerate `test/design/goldens/*.png`. Commit there per task.
+- **Docs repo** (this one): copy PNGs into `docs/assets/images/`, update
+  markdown. Commit here per task.
 
-## Tasks (one commit each, in the repo noted)
+Golden surface: phone, 390×844 @1x (`design_test_host.dart`), matching the
+existing goldens — not a device-frame screenshot like the old GIFs.
 
-- [ ] 1. (docs) Write this TASKS.md. *(this commit)*
-- [ ] 2. (app) Reuse existing goldens: no new test code, just confirm
-      `home_recent_*`, `viewer_app_bar*`, `viewer_search_bar*`, `viewer_dock`,
-      `viewer_how_to_use`, `tutorial_*` are current (rerun suite).
-- [ ] 3. (docs) `basics.md` — open file: swap in `home_recent_light.png`
-      (+ note dark mode exists); fix any stale permission-flow text.
-- [ ] 4. (docs) `basics.md` — search: swap in `viewer_search_bar.png`.
-- [ ] 5. (app) New golden: manual column resize indicator + resize-all
-      dialog (`viewer_column_resize_test.dart`).
-- [ ] 6. (docs) `basics.md` — column resize: use new screenshots.
-- [ ] 7. (app) New golden: jump-to dialog (`viewer_jump_test.dart`).
-- [ ] 8. (docs) `basics.md` — jump to: use new screenshot.
-- [ ] 9. (app) New golden: select-range dialog
-      (`viewer_select_range_test.dart`).
-- [ ] 10. (docs) `basics.md` — select range: use new screenshot.
-- [ ] 11. (app) New golden: copy dialog + cell-detail dialog
-      (`viewer_copy_test.dart`).
-- [ ] 12. (docs) `basics.md` — copy: use new screenshots; reuse
-      `viewer_dock.png` for the bottom action row.
-- [ ] 13. (app) New golden: recent-file three-dot menu
-      (share/rename/remove) (`recent_file_menu_test.dart`).
-- [ ] 14. (docs) `basics.md` — share/rename/remove: use new screenshot.
-- [ ] 15. (app) New golden: filter visual editor
-      (`filter_visual_editor_test.dart`), light/dark.
-- [ ] 16. (docs) `filter.md` — swap screenshot, verify operator list against
-      `presentation/widgets/query_builder/`.
-- [ ] 17. (app) Add `matchesGoldenFile` capture to
-      `filter_sql_page_chrome_test.dart` (SQL editor, applied state).
-- [ ] 18. (docs) `sql-query.md` — swap screenshot, verify column-alias
-      explanation still matches current mapping UI.
-- [ ] 19. (app) New golden: AI assistant chat screen
-      (`ai_assistant_chrome_test.dart`).
-- [ ] 20. (docs) `ai-assistant.md` — swap screenshot, verify privacy copy
-      still matches current provider/behavior.
-- [ ] 21. (app) New golden: show/hide columns dialog + freeze column dialog
-      (`column_visibility_chrome_test.dart`).
-- [ ] 22. (docs) `show-hide-freeze.md` — swap both screenshots.
-- [ ] 23. (app) New golden: column-to-image dialog
-      (`column_to_image_chrome_test.dart`).
-- [ ] 24. (docs) `column-to-image.md` — swap screenshot.
-- [ ] 25. (app) New golden: align-columns dialog
-      (`align_columns_chrome_test.dart`).
-- [ ] 26. (docs) `align-column.md` — swap screenshot.
-- [ ] 27. (app) Add `matchesGoldenFile` capture to
-      `export_filter_chrome_test.dart` (custom-columns sheet, style picker,
-      style editor).
-- [ ] 28. (docs) `export-pdf.md` — swap screenshots; reuse
-      `editor_work_bar.png`/action bar pattern for the top bar.
-- [ ] 29. (docs) `generate-chart.md` — swap in existing
+## Reusable existing goldens
+
+`home_recent_*`, `viewer_app_bar*`, `viewer_search_bar*`, `viewer_dock`,
+`viewer_how_to_use`, `viewer_status_title`, `tutorial_*`,
+`chart_action_bar_*`, `chart_glyphs_*`, `editor_work_bar`,
+`editor_column_rows`. Confirmed current: `flutter test test/design/` passes
+(79 passed, 2 skipped) as of this plan.
+
+Known blocker: `home_settings_*` golden is `skip: true` (live `google_fonts`
+network fetch for the language dropdown — `home_shell_test.dart:273`).
+
+## Tasks
+
+- [x] 1. (docs) Write TASKS.md.
+- [x] 2. (app) Confirm existing goldens still pass — done, no new commit
+      needed.
+- [ ] 3. (docs) `basics.md` — rewrite open-file text if needed, swap in
+      `home_recent_light.png`.
+- [ ] 4. (docs) `basics.md` — rewrite search section (already accurate per
+      `searching.md`), swap in `viewer_search_bar.png`.
+- [ ] 5. (docs) `basics.md` — rewrite resize/jump/select-range/copy
+      sections to match the current UI (Layout panel width slider; `⋮` menu
+      for jump/select-range; one-tap copy + long-press cut/clear). Reuse
+      `viewer_dock.png` for the dock row.
+- [ ] 6. (app) New golden: the viewer's `⋮` popup menu
+      (`csv_viewer_more_actions.dart`) — self-contained, cheap to pump.
+- [ ] 7. (docs) `basics.md` — use the `⋮` menu screenshot; add a short Sort
+      and Undo/redo mention (both real, undocumented features).
+- [ ] 8. (app) New golden: recent-file three-dot menu (share/rename/remove).
+- [ ] 9. (docs) `basics.md` — share/rename/remove screenshot.
+- [ ] 10. (docs) `filter.md` — rewrite for the Filter/Sort panel
+      (`filter-sheet.md`); drop the "full screen" description.
+- [ ] 11. (app) Add `matchesGoldenFile` capture to the existing
+      `filter_sql_page_chrome_test.dart` pump (it already builds the real
+      page; just missing the golden call) for the SQL editor.
+- [ ] 12. (docs) `sql-query.md` — rewrite: SQL lives inside the filter panel
+      via **Edit as SQL**, not its own screen; swap screenshot from task 11.
+- [ ] 13. (docs) `ai-assistant.md` — rewrite per `assistant-sheet.md` (a
+      dock sheet, not a chat screen); text-only unless a cheap golden turns
+      up while reading the assistant sheet's widget.
+- [ ] 14. (docs) `show-hide-freeze.md` — rewrite as the Layout panel's Hide
+      button and Freeze stepper; note the old dialogs are legacy.
+- [ ] 15. (docs) `column-to-image.md` — rewrite as the Image column **Type**
+      (`column-types.md`), reachable via Layout → Type.
+- [ ] 16. (docs) `align-column.md` — rewrite as the Layout panel's Align
+      control.
+- [ ] 17. (docs) Follow-up (not this session): a real Layout-panel golden
+      (column scope + grid scope) to replace the three rewritten pages'
+      placeholder text-only screenshots — needs provider wiring research
+      similar to `filter_sql_page_chrome_test.dart`.
+- [ ] 18. (docs) `export-pdf.md` — verify text against current export code;
+      add `matchesGoldenFile` to `export_filter_chrome_test.dart`'s style
+      picker/editor pumps if quick, else leave GIF and note as follow-up.
+- [ ] 19. (docs) `generate-chart.md` — swap in existing
       `chart_action_bar_*`, `chart_glyphs_*`, `editor_column_rows.png`;
       verify chart-type list against current chart config.
-- [ ] 30. (app) Fix or work around the `home_settings_*` skip; capture theme
-      picker.
-- [ ] 31. (docs) `customization.md` — swap screenshot.
-- [ ] 32. (docs) `index.md` — refresh hero copy/feature grid if any listed
-      feature is gone/renamed; optionally add a tutorial screenshot.
-- [ ] 33. (docs) `faq.md` — sanity-check answers still match current
-      behavior (chart type list, re-import flow).
-- [ ] 34. (docs) Final pass: `mkdocs build` locally to confirm no broken
-      image refs, then update this file's checkboxes.
-
-Screenshots are captured at the phone golden surface (390×844 @1x, per
-`design_test_host.dart`) rather than a real device frame, matching the
-existing goldens' style — consistent with each other, not with the old GIFs'
-device chrome.
+- [ ] 20. (docs) `customization.md` — text-only pass; screenshot blocked on
+      `home_settings_*` skip (task 21).
+- [ ] 21. (app) Investigate the `home_settings_*` skip; fix or capture the
+      theme picker without the language dropdown. Follow-up if not quick.
+- [ ] 22. (docs) `index.md` — refresh feature grid copy if anything listed
+      is gone/renamed.
+- [ ] 23. (docs) `faq.md` — sanity-check against current behavior.
+- [ ] 24. (docs) Final pass: `mkdocs build` locally, fix broken image refs,
+      update checkboxes here.
