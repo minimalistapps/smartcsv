@@ -27,11 +27,14 @@ There are 2 ways to open a csv file:
 === "Open csv file from File Manager"
     ![Open csv file from File Manager](assets/images/smartcsv-open-file-from-explorer.gif){ width="300" loading=lazy }
 
-!!! note
-    All file, after open will be listed in the `Recent files`.
+Every file you open is listed on the home screen, under `Recent files`.
 
-    The first time open big CSV file, it may take some time.  
-    But the next time, after the CSV file is imported, it will be open immediatelly.
+=== "Recent files"
+    ![Recent files](assets/images/smartcsv-home-recent.png){ width="300" loading=lazy }
+
+!!! note
+    Opening a csv file imports it into a local database first. The first time you open a big file, that import may take a moment.
+    The next time you open the same file, it opens immediately &mdash; unless the file changed on disk, in which case it is imported again.
 
 ---
 
@@ -39,96 +42,63 @@ There are 2 ways to open a csv file:
 Smart CSV let you search content easily. Once the csv file is openned, you can click on the search icon :octicons-search-24:
 After the search box open, you can type the text you want to find.
 
-Smart CSV will auto navigate and highlight the row that contain the searched text.
-You can also using arrow buttons to move next/previous row match with the search text.
+Smart CSV will auto navigate and highlight the row that contain the searched text, and the field shows how many rows match (eg. `12 rows`).
+Use the :fontawesome-solid-chevron-up: and :fontawesome-solid-chevron-down: buttons at the end of the toolbar to move to the previous/next matching row.
 
 === "Search content"
-    ![Search content](assets/images/smartcsv-search.gif){ width="300" loading=lazy }
+    ![Search content](assets/images/smartcsv-search-bar.png){ width="300" loading=lazy }
+
+The search only looks through the rows currently shown, so an active filter narrows what it searches. Open the search again and your last search is still there, ready to reuse.
+
+---
+
+## Selecting cells, rows & columns
+
+Tap a row number, a column header, or the top-left corner to select everything in it. Tap and drag the dots on the corners of a selection to stretch it. This replaces touching every cell one by one when you want to copy, generate a chart or export to PDF with just part of your data.
+
+While a selection covers more than one cell, a line above the bottom bar shows its size and, for number columns, the sum and average &mdash; tap the line for the full breakdown (count, min, max).
+
+To select a specific range of rows, or jump straight to a row number, tap :material-dots-vertical: at the top right of the viewer:
+
+=== "The ⋮ menu"
+    ![The ⋮ menu](assets/images/smartcsv-more-menu.png){ width="300" loading=lazy }
+
+- **Jump to row** &mdash; type a row number (or tap `Begin`/`End`) and the grid scrolls straight to it.
+- **Select a range** &mdash; enter a `from` and `to` row number (eg. `500` to `1000`) to select that whole range.
 
 ---
 
 ## Column resize
 
-By default Smart CSV auto resize columns automatically. But in some case, you want to resize column manually.
-To do that, you have two options:
+By default, columns size themselves automatically. To change a column's width:
 
-### Manualy drag to resize
+- **Drag it manually.** Long press a column header to bring up the resize handle, then drag.
+- **Set every column to one width, or reset to automatic.** Tap a column's header to select it, then open the **Layout** panel at the bottom of the screen: the grid scope's `Column width` slider sets the default width for every column without its own override, and its **Reset** chip clears overrides and goes back to automatic sizing.
 
-You can long press on the header, then the resize indicator will be shown. Now you can drag to resize the column width.
-
-=== "Manual resize"
-    ![Manual resize](assets/images/smartcsv-manual-resize.gif){ width="300" loading=lazy }
-
-### Change all column width to the same value.
-Click on the resize column button :left_right_arrow:
-After the resize dialog show, input the column width that you want to set to all columns (eg: 75)
-Finally, click on the button `Custom`. Now all the columns will have the same with.
-
-
-To restore the automatically resize, you can click on the resize column button :left_right_arrow:
-Then click to button `Auto`, then all columns will be set site automatically as default.
-
-=== "Auto resize"
-    ![Auto resize](assets/images/smartcsv-resize-auto.gif){ width="300" loading=lazy }
-
----
-
-## Jump to
-Your data is so long, you don't want to scroll long time till the specific row.
-Smart CSV let you jump to the specific row instantlly.
-You just need to click on the jump button, then type the row number, and finally click on the `Select` button to jump to
-that row number.
-
-In that dialog, you can also click on the `Begin` to jump to the first row, or click on the `End` to jump to the last row.
-
-=== "Jump to"
-    ![Jump to](assets/images/smartcsv-jump.gif){ width="300" loading=lazy }
-
----
-
-## Select range
-
-Smart CSV has a tons of features, such as copy, generate chart, export to pdf.
-In order to do that, the user have to select which rows to be handled(the rows that highlight).
-So instead touch each single row, Smart CSV support `Select range` feature to help you select data more easilly.
-
-To do that, you just need to click on the button `Select`.
-The dialog `Select range` will be shown.
-Now, input the `from` and `to` values. Eg: from = 500; to = 1000
-Then click on the button `Select`.
-
-Now the row number from 500 - 1000 will be selected.
-
-Then, you can use feature export pdf, generate chart or copy with the selected rows.
-
-=== "Select range"
-    ![Jump to](assets/images/smartcsv-select-range.gif){ width="300" loading=lazy }
+Row height (`Small`/`Medium`/`Large`) and how many leading columns are frozen also live in that same Layout panel.
 
 ---
 
 ## Copy
-Smart CSV let you copy data flexible.
-Firstly, you need to select rows you want to copy. If there is no selected rows, the all rows will be
-selected. You can also use [Select range](#select-range) feature to custom range selection.
+Select the rows, columns or cells you want to copy &mdash; see [Selecting cells, rows & columns](#selecting-cells-rows-columns) above. If nothing is selected, copying uses every row.
 
-Next, click on the copy button at the bottom of the screen. The copy dialog will be shown.
-In the dialog, you can select which columns will be copy. You can see the result in the preview screen.
+Tap **Copy** in the bar at the bottom of the screen. The selection is copied straight to the clipboard, ready to paste into a spreadsheet.
 
-Finally, click on the `Copy` button. The selected content will be copy to the clipboard.
-Now, you can paste that content anywhere as you want.
+=== "The bottom dock"
+    ![Copy, Edit, Filter, Layout](assets/images/smartcsv-dock.png){ width="300" loading=lazy }
 
-=== "Copy"
-    ![Copy](assets/images/smartcsv-copy.gif){ width="300" loading=lazy }
+To copy, cut, or clear just part of the data, hold a cell, a row number, or a selected range: a menu opens next to your finger with **Copy**, **Cut**, and **Clear content**. For a single cell, that same menu also has **View full content**, which opens a sheet with the cell's whole text and its own **Copy** button.
 
-Sometimes, you just want to copy the content of a single cell.
-To do that, you just need long press on that cell, the cell detail dialog will be shown.
-There is a copy button on the top right of the dialog.
-Click to that icon to copy the content.
-
-## Share, rename, remove files.
-In the home screen, in `Recent files` you can click on the three dots button.
-Then, you can choose either share/rename/remove that file.
+## Share, rename, remove files
+In the home screen, in `Recent files`, tap the three-dot button on a file to share, rename, or remove it.
 
 === "Share, rename, remove file"
-    ![Copy](assets/images/smartcsv-share-rename.gif){ width="300" loading=lazy }
+    ![Share, rename, remove file](assets/images/smartcsv-file-menu.png){ width="300" loading=lazy }
 
+---
+
+## Sorting
+Hold a column's header to sort by it &mdash; A→Z first, hold again for Z→A, and a third time to go back to the file's own order. An arrow next to the header shows the current direction. You can also sort from the **Filter** panel's **Sort** tab, which supports sorting by up to three columns at once (`Then by this`).
+
+## Undo & redo
+Every cell edit, inserted row, deleted row, row move, and column change can be undone. The undo and redo buttons sit at the top of the viewer, next to search, and grey out when there's nothing to undo/redo. Deleting rows or a column also offers an **Undo** action directly on the confirmation message.
