@@ -2,7 +2,7 @@
 hide:
   - navigation
 ---
-Discover Smart CSV, your go-to app for effortlessly managing CSV files. With advanced features like intuitive search, visual filters, SQL querying, PDF conversion, and more, it revolutionizes data interaction. Experience efficiency like never before.
+Discover Smart CSV, your go-to app for effortlessly managing CSV files. With advanced features like intuitive search, visual filters, SQL querying, in-place editing, PDF conversion, and more, it revolutionizes data interaction. Experience efficiency like never before.
 
 <a href="https://play.google.com/store/apps/details?id=xyz.minimalistapps.smartcsv" target="_blank">
     <img src="assets/download_google.svg" width="223" alt="Get it on Google Play"/>
@@ -20,7 +20,9 @@ Discover Smart CSV, your go-to app for effortlessly managing CSV files. With adv
 - :material-tab-search: __Search content__ – Easily to find your content with search & filter feature.
 - :fontawesome-solid-file-pdf: __PDF perfection__ – Unlimited rows, personalized colors for beautifully detailed tables in PDFs.
 - :fontawesome-solid-chart-simple: __Chart your way__ – Explore diverse charts without limits on chart types and endless data points.
-- :fontawesome-solid-wand-magic-sparkles: __Unlimited customization__ – Explore endless possibilities such as hiding, freezing, aligning columns, and more.
+- :fontawesome-solid-pen-to-square: __Edit in place__ – Edit cells, add, move and delete rows and columns right in the grid, with undo &amp; redo. [Editing](editing.md)
+- :fontawesome-solid-table-columns: __Column types__ – Numbers, checkboxes, dates, choices, links and images, without changing your file. [Column types](column-types.md)
+- :fontawesome-solid-wand-magic-sparkles: __Unlimited customization__ – Hide, freeze, align and resize columns from one live Layout panel. [Layout](show-hide-freeze.md)
 
 </div>
 

@@ -72,22 +72,24 @@ To select a specific range of rows, or jump straight to a row number, tap :mater
 
 By default, columns size themselves automatically. To change a column's width:
 
-- **Drag it manually.** Long press a column header to bring up the resize handle, then drag.
+- **Drag it manually.** Drag the grip at the right edge of a column's header.
 - **Set every column to one width, or reset to automatic.** Tap a column's header to select it, then open the **Layout** panel at the bottom of the screen: the grid scope's `Column width` slider sets the default width for every column without its own override, and its **Reset** chip clears overrides and goes back to automatic sizing.
 
-Row height (`Small`/`Medium`/`Large`) and how many leading columns are frozen also live in that same Layout panel.
+Row height (`Small`/`Medium`/`Large`) and how many leading columns are frozen also live in that same Layout panel &mdash; see [Show, hide, freeze columns](show-hide-freeze.md).
 
 ---
 
 ## Copy
-Select the rows, columns or cells you want to copy &mdash; see [Selecting cells, rows & columns](#selecting-cells-rows-columns) above. If nothing is selected, copying uses every row.
+Select the rows, columns or cells you want to copy &mdash; see [Selecting cells, rows & columns](#selecting-cells-rows-columns) above. **Copy** is greyed out while nothing is selected; to take the whole file, use `Share` in the :material-dots-vertical: menu instead.
 
-Tap **Copy** in the bar at the bottom of the screen. The selection is copied straight to the clipboard, ready to paste into a spreadsheet.
+Tap **Copy** in the bar at the bottom of the screen. The selection is copied straight to the clipboard, ready to paste into a spreadsheet: one cell copies just its text, anything larger pastes as real cells. The `#` row numbers are never copied.
 
 === "The bottom dock"
     ![Copy, Edit, Filter, Layout](assets/images/smartcsv-dock.png){ width="300" loading=lazy }
 
 To copy, cut, or clear just part of the data, hold a cell, a row number, or a selected range: a menu opens next to your finger with **Copy**, **Cut**, and **Clear content**. For a single cell, that same menu also has **View full content**, which opens a sheet with the cell's whole text and its own **Copy** button.
+
+To edit cells, add or delete rows and columns, see [Editing](editing.md).
 
 ## Share, rename, remove files
 In the home screen, in `Recent files`, tap the three-dot button on a file to share, rename, or remove it.
