@@ -4,12 +4,12 @@ Smart CSV empowers you to generate charts directly from your CSV content.
 Follow these steps to create a chart:
 
 - Select specific rows or all for chart data.
-- Click on the :fontawesome-solid-chart-simple: button (on the top of screen).
-- [Custom chart types](#custom-chart-type), [labels](#custom-labels) & [series](#custom-series) to match your request.
+- Tap :material-dots-vertical: at the top right of the viewer, then `Generate chart`.
+- [Custom chart type](#custom-chart-type), [labels](#custom-labels), [series](#custom-series) & [size](#custom-size) to match your request.
 - Finally, click on the :octicons-download-16: button to save the chart.
 
-=== "Generate chart"
-    ![Generate chart](assets/images/smartcsv-generate-chart.gif){ width="300" loading=lazy }
+=== "Chart type & column picker"
+    ![Chart type & column picker](assets/images/smartcsv-chart-action-bar.png){ width="300" loading=lazy }
 
 !!! warning
     You can only generate chart if the data contains at least on serier (a column that contains number value).
@@ -18,7 +18,7 @@ Follow these steps to create a chart:
     You can view your chart file in the :material-folder-download: (exported) tab in the Home screen.
 
 ## Custom chart type
-You can click on the `Type` button to select chart type.
+The chart type is a strip of options right under the app bar &mdash; tap the type you want and the chart updates immediately.
 
 Smart CSV support following chart types:
 
@@ -34,9 +34,14 @@ Smart CSV support following chart types:
 - Doughnut chart. :material-professional-hexagon:{ .pro title="Available for PRO version only" }
 - Pyramid chart. :material-professional-hexagon:{ .pro title="Available for PRO version only" }
 
+## Custom title
+Tap the chart's title, at the top of the screen, to rename it directly &mdash; there's no separate dialog.
+
 ## Custom labels
-You can click on the `Labels` button to select label which is used for the chart.
+Tap `Labels` in the bottom bar to select the column used to label the chart. The picker opens as a panel above the bar, live over the chart, rather than a dialog.
 
 ## Custom series
-You can click on the `Series` button to select the series data point to mapping with above labels for the chart.
+Tap `Series` in the bottom bar to select the series data points to map with the labels above.
 
+## Custom size
+Tap `Size` in the bottom bar to set the exported chart image's width and height.

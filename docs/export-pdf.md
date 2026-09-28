@@ -4,12 +4,12 @@ Smart CSV let you convert the CSV content to the beautiful PDF file.
 Following steps to convert CSV content to the pdf:
 
 - Select specific rows or all to convert to the PDF.
-- Click on the `PDF` button (on the top of screen).
+- Tap :material-dots-vertical: at the top right of the viewer, then `Export PDF`.
 - [Custom columns](#custom-columns) & [style](#custom-styles) to match your request.
 - Finally, click on the :octicons-download-16: button to start convert & save the PDF file.
 
-=== "Export PDF"
-    ![Export PDF](assets/images/smartcsv-export-pdf.gif){ width="300" loading=lazy }
+=== "The ⋮ menu"
+    ![The ⋮ menu, with Export PDF](assets/images/smartcsv-more-menu.png){ width="300" loading=lazy }
 
 !!! note
     When there is no rows is selected, then all rows will be consider to export to the PDF
