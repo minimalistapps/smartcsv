@@ -1,0 +1,159 @@
+/*
+ * The app's "SmartCsv Paper" design system (DESIGN.md in the app repo),
+ * mapped onto Material for MkDocs: a flat warm-neutral ground, opaque
+ * surfaces with a hairline rim, one green accent.
+ */
+
+/* ── Light ─────────────────────────────────────────────────────────────── */
+[data-md-color-scheme="default"] {
+  --paper-ground: #F6F5F2;
+  --paper-surface: #FBFAF8;
+  --paper-overlay: #FFFFFF;
+  --paper-surface-muted: #EFEDE8;
+  --paper-hairline: #E6E3DC;
+  --paper-border: #D8D4CB;
+  --paper-text: #1C1B19;
+  --paper-text-secondary: #6B6862;
+  --paper-accent: #2F7A50;
+  --paper-accent-pressed: #24603F;
+  --paper-accent-subtle: #E7F0E9;
+  --paper-on-accent: #FFFFFF;
+  --paper-danger: #C0392F;
+  --paper-shadow: 0 1px 2px rgba(26, 23, 20, 0.06);
+
+  --md-primary-fg-color: var(--paper-accent);
+  --md-primary-fg-color--light: #34A36B;
+  --md-primary-fg-color--dark: var(--paper-accent-pressed);
+  --md-primary-bg-color: var(--paper-on-accent);
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Dark ──────────────────────────────────────────────────────────────── */
+[data-md-color-scheme="slate"] {
+  --paper-ground: #1B1A18;
+  --paper-surface: #242320;
+  --paper-overlay: #2A2825;
+  --paper-surface-muted: #2C2A27;
+  --paper-hairline: #35322E;
+  --paper-border: #423E39;
+  --paper-text: #F2F0EB;
+  --paper-text-secondary: #ABA69D;
+  --paper-accent: #34A36B;
+  --paper-accent-pressed: #2F7A50;
+  --paper-accent-subtle: #1D2B22;
+  --paper-on-accent: #08130D;
+  --paper-danger: #E67C72;
+  --paper-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+  --md-hue: 40;
+  --md-primary-fg-color: var(--paper-surface);
+  --md-primary-fg-color--light: var(--paper-overlay);
+  --md-primary-fg-color--dark: var(--paper-ground);
+  --md-primary-bg-color: var(--paper-text);
+  --md-primary-bg-color--light: var(--paper-text-secondary);
+}
+
+/* ── Shared mapping ────────────────────────────────────────────────────── */
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--paper-ground);
+  --md-default-fg-color: var(--paper-text);
+  --md-default-fg-color--light: var(--paper-text-secondary);
+  --md-default-fg-color--lighter: var(--paper-border);
+  --md-default-fg-color--lightest: var(--paper-hairline);
+  --md-typeset-color: var(--paper-text);
+  --md-typeset-a-color: var(--paper-accent);
+  --md-accent-fg-color: var(--paper-accent);
+  --md-accent-fg-color--transparent: var(--paper-accent-subtle);
+  --md-code-bg-color: var(--paper-surface-muted);
+  --md-code-fg-color: var(--paper-text);
+  --md-typeset-table-color: var(--paper-hairline);
+  --md-footer-bg-color: var(--paper-surface);
+  --md-footer-bg-color--dark: var(--paper-ground);
+  --md-footer-fg-color: var(--paper-text);
+  --md-footer-fg-color--light: var(--paper-text-secondary);
+  --md-footer-fg-color--lighter: var(--paper-text-secondary);
+}
+
+/* The dark header is a surface, not a green slab: the accent is for
+   actions, and a lit bar across the top of a dark page shouts. */
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  border-bottom: 1px solid var(--paper-hairline);
+}
+
+/* ── Typography: the app's ramp ────────────────────────────────────────── */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--paper-text);
+}
+
+.md-typeset h2,
+.md-typeset h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ── Surfaces: opaque, hairline rim, superellipse-ish corners ──────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--paper-hairline);
+  border-radius: 14px;
+  background-color: var(--paper-surface);
+  box-shadow: var(--paper-shadow);
+  font-size: 0.7rem;
+}
+
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  border-radius: 14px 14px 0 0;
+}
+
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--paper-hairline);
+  border-radius: 16px;
+  background-color: var(--paper-surface);
+  box-shadow: var(--paper-shadow);
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--paper-border);
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--paper-hairline);
+  border-radius: 14px;
+  background-color: var(--paper-surface);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--paper-surface-muted);
+}
+
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset pre > code {
+  border-radius: 14px;
+}
+
+/* Screenshots are app surfaces too. */
+.md-typeset img[src*="assets/images/"] {
+  border: 1px solid var(--paper-hairline);
+  border-radius: 20px;
+  box-shadow: 0 6px 16px -6px rgba(26, 23, 20, 0.16);
+}
+
+/* Tab sets that only hold a screenshot. */
+.md-typeset .tabbed-set {
+  border-radius: 16px;
+}
+
+/* ── Pro badge ─────────────────────────────────────────────────────────── */
+.pro {
+  color: var(--paper-accent);
+}
